@@ -25,7 +25,7 @@ library(arulesViz)
 # in elderly people.
 
 # Read the data
-dat<-read.table("nltcs.txt",header=TRUE)
+dat<-read.table("http://mathsci.ucd.ie/~brendan/data/Old/nltcs.txt",header=TRUE)
 
 # data summary
 str(dat)  # 3152  of  18 variables
