@@ -1,15 +1,20 @@
 # Hello
 # Here you are going to learn how to create a Sankey Diagram with the networkD3 library.
 
-# In my example, the Sankey Diagram will show a timeline of some of Vincent Van Gogh's paintings.
 
-# You are listening: Solitude - Sakamoto Ryuichi.
-# I chose this composition because I think it reflects Van Gogh's fragile soul.
+# A Sankey diagram is a flow diagram generally used to depict a flow from one set of values to another.
+# The things being connected are called nodes
+# (in our examples the nodes are the paintings) and the connections are called links.
+# A real-world example: Google Analytics uses sankeys to show
+# how traffic flows from pages to other pages on your web site.
+
+# In this example, the Sankey Diagram will show a timeline of some Vincent Van Gogh's paintings.
+# You are listening: Sadness and Sorrow - Toshio Masuda
 
 # You need to install the following package: install.packages('networkD3')
 library(networkD3)
 
-# networkdD3: https://cran.r-project.org/web/packages/networkD3/networkD3.pdf
+# Information about networkdD3: https://cran.r-project.org/web/packages/networkD3/networkD3.pdf
 
 # Let's list some of Van Gogh's paintings in a dataframe:
 nodes = data.frame("Vincent" = 
@@ -29,7 +34,7 @@ nodes = data.frame("Vincent" =
                        "1890: Almond Blossoms", # Node 13
                        "1890: Tree Roots (Last Van Gogh's Painting)" # Node 14
                        ))
-nodes # the (rows - 1) corresponde to the nodes
+nodes # the (rows - 1) correspond to the nodes
 
 # Here we create our node connections
 links = as.data.frame(matrix(c(
@@ -49,11 +54,11 @@ links = as.data.frame(matrix(c(
   5, 10, 1,
   9, 13, 1,
   10, 13, 1,
-  7,11,1,
-  8,11,1,
+  7, 11, 1,
+  8, 11, 1,
   11, 12, 1,
-  12,14,1,
-  13,12,1),
+  12, 14, 1,
+  13, 12, 1),
   byrow = TRUE, ncol = 3))
 
 names(links) = c("source", "target", "value")
@@ -75,11 +80,6 @@ sankeyNetwork(Links = links, Nodes = nodes,
 
 # I now try to make it a bit nicer
 
-# A Sankey diagram is a flow diagram generally used to depict a flow from one set of values to another.
-# The things being connected are called nodes
-# (in our examples the nodes are the paintings) and the connections are called links.
-# A real-world example: Google Analytics uses sankeys to show
-# how traffic flows from pages to other pages on your web site.
 
 # Thanks For Watching
 print("If you liked the video, please subscribe to the channel") 
